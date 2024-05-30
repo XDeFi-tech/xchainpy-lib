@@ -6,7 +6,7 @@ import bech32
 import ecdsa
 import hdwallets
 import mnemonic
-import http3
+import httpx
 import json
 import base64
 import re
@@ -24,7 +24,7 @@ class CosmosSDKClient:
         self.derive_path = derive_path
         self.server = server
         self.chain_id = chain_id
-        self.client = http3.AsyncClient(timeout=10)
+        self.client = httpx.AsyncClient(timeout=10)
 
     def seed_to_privkey(self, seed: str) -> bytes:
         """

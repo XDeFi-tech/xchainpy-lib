@@ -1,6 +1,6 @@
 import binascii
 from .cosmos.models.StdTx import StdTx
-import http3
+import httpx
 import json
 from xchainpy_client import interface
 from xchainpy_crypto import crypto as xchainpy_crypto
@@ -325,7 +325,7 @@ class Client(interface.IXChainClient, IThorchainClient):
     async def build_deposit_tx(self , msg_native_tx : MsgNativeTx) -> StdTx :
         try:
             url = f'{self.client_url[self.get_network()]["node"]}/thorchain/deposit'
-            client = http3.AsyncClient(timeout=10)
+            client = httpx.AsyncClient(timeout=10)
             data = {
             "coins" : msg_native_tx.coins,
             "memo" : msg_native_tx.memo,
