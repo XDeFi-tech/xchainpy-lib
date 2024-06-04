@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 setup(
     name='xchainpy_thorchain',
     packages=find_packages(),
-    version='0.2.0',
+    version='0.2.1',
     license='MIT',
     description='Thorchain wrapper',
     author='THORChain',
